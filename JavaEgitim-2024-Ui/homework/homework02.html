@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+   <!-- Required meta tags -->
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+   <!-- Bootstrap CSS -->
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+   <title>Hello, world!</title>
+   <style>
+    
+      .container {
+            position:sticky;
+            width:auto;
+            height: auto;
+            margin: 100px;
+            padding: 10px;
+            padding-top: 50px;
+            display: block;
+            text-align: center;
+            background-color: white;
+            border-radius: 10px;
+           
+            
+        }
+        .row{
+            border: 1px solid;
+            border-color: rgb(145, 144, 144);
+            background-color: white;  
+            padding: 10px;
+            margin: 10px;
+            border-radius: 3px;  
+                  
+        }
+        .col{
+            text-align: center;
+           
+        }
+        body{
+            
+            background-color: rgb(238, 233, 233);
+            margin: 250px;
+            width: auto;
+            height: auto; 
+        
+        }
+   </style>
+    <body>
+
+        <div class="container">
+            <div  style="text-align: center; font-size: larger; color: black;"><b >Login</b></div>
+            <div class="row"style="opacity: 0.4;"">User Name</div>
+            <div class="row" style="opacity: 0.4;">Password</div>
+            <div class="row"><label for="exampleFormControlSelect1"></label>
+                <select class="form-control" id="exampleFormControlSelect1" style="opacity: 0.8;border: 0cap;">select role
+                    <option >select role</option>
+                    <option>student</option>
+                    <option>teacher</option>
+                    <option>admin</option>
+                </select></div>
+            <div class="row" style="border: 0cap;">
+                <div class="col" ><input type="checkbox" value="lsRememberMe" id="rememberMe"> <label for="rememberMe"><b>Remember me</b></label></div>
+                <div class="col" ><button type="button" onclick="myFunction()"  style="background-color: rgb(10, 99, 201);color: white;width: 80px;font-size:small;border-color:rgb(0, 162, 255);border-radius: 3px;padding: 8px;">Login</button></div>
+            </div>
+        </body>
+</html>
