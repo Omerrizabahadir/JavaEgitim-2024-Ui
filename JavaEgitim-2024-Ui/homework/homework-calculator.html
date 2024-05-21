@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hesap Makinesi</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f5f5f5;
+            margin: 0;
+        }
+        .calculator {
+            background-color: #333;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            width: 300px;
+        }
+        .display {
+            background-color: #222;
+            color: #fff;
+            font-size: 32px;
+            text-align: right;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+        .button {
+            background-color: #444;
+            color: #fff;
+            font-size: 24px;
+            padding: 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: #555;
+        }
+        .button.operator {
+            background-color: orange;
+        }
+        .button.operator:hover {
+            background-color: darkorange;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <div class="display" id="display">0</div>
+        <div class="buttons">
+            <button class="button" onclick="clearDisplay()">AC</button>
+            <button class="button" onclick="inputOperator('+/-')">+/-</button>
+            <button class="button" onclick="inputOperator('%')">%</button>
+            <button class="button operator" onclick="inputOperator('/')">÷</button>
+            <button class="button" onclick="inputNumber('7')">7</button>
+            <button class="button" onclick="inputNumber('8')">8</button>
+            <button class="button" onclick="inputNumber('9')">9</button>
+            <button class="button operator" onclick="inputOperator('*')">×</button>
+            <button class="button" onclick="inputNumber('4')">4</button>
+            <button class="button" onclick="inputNumber('5')">5</button>
+            <button class="button" onclick="inputNumber('6')">6</button>
+            <button class="button operator" onclick="inputOperator('-')">-</button>
+            <button class="button" onclick="inputNumber('1')">1</button>
+            <button class="button" onclick="inputNumber('2')">2</button>
+            <button class="button" onclick="inputNumber('3')">3</button>
+            <button class="button operator" onclick="inputOperator('+')">+</button>
+            <button class="button" style="grid-column: span 2;" onclick="inputNumber('0')">0</button>
+            <button class="button" onclick="inputNumber('.')">.</button>
+            <button class="button operator" onclick="calculate()">=</button>
+        </div>
+    </div>
+
+    <script>
+        let displayValue = '0';
+        let firstValue = null;
+        let operator = null;
+        let waitingForSecondValue = false;
+
+        function updateDisplay() {
+            const display = document.getElementById('display');
+            display.textContent = displayValue;
+        }
+
+        function inputNumber(number) {
+            if (waitingForSecondValue) {
+                displayValue = number;
+                waitingForSecondValue = false;
+            } else {
+                displayValue = displayValue === '0' ? number : displayValue + number;
+            }
+            updateDisplay();
+        }
+
+        function inputOperator(nextOperator) {
+            const value = parseFloat(displayValue);
+
+            if (operator && waitingForSecondValue) {
+                operator = nextOperator;
+                return;
+            }
+
+            if (firstValue === null && !isNaN(value)) {
+                firstValue = value;
+            } else if (operator) {
+                const result = performCalculation(firstValue, value, operator);
+                displayValue = `${parseFloat(result.toFixed(7))}`;
+                firstValue = result;
+            }
+
+            waitingForSecondValue = true;
+            operator = nextOperator;
+            updateDisplay();
+        }
+
+        function performCalculation(first, second, operator) {
+            switch (operator) {
+                case '+':
+                    return first + second;
+                case '-':
+                    return first - second;
+                case '*':
+                    return first * second;
+                case '/':
+                    return first / second;
+                default:
+                    return second;
+            }
+        }
+
+        function clearDisplay() {
+            displayValue = '0';
+            firstValue = null;
+            operator = null;
+            waitingForSecondValue = false;
+            updateDisplay();
+        }
+
+        function calculate() {
+            const value = parseFloat(displayValue);
+            if (operator && !waitingForSecondValue) {
+                const result = performCalculation(firstValue, value, operator);
+                displayValue = `${parseFloat(result.toFixed(7))}`;
+                firstValue = null;
+                operator = null;
+                waitingForSecondValue = false;
+                updateDisplay();
+            }
+        }
+
+        updateDisplay();
+    </script>
+</body>
+</html>
