@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h2>JavaScript const</h2>
+        <p>Declaring a constant array does NOT make the elements unchangeable:</p>
+        <p id="demo"></p>
+        <script>
+        const num = [1, 2, 3];
+        // Create an Array: 
+        
+        /*array'in içindeki bir değerini değiştirir ve array'de yeni bir değer atar siler.hata verme.
+        ancak array'in tamamını değiştiremez,silemezsin. hata verir
+        It changes a value in the array and assigns a new value to the array or deletes it. However, 
+        if the entire array is changed or deleted, it will give an error.*/
+        
+        
+        num[0] = 4;// Change an element: 
+        num.push(6);
+        // Add an element: 
+        // Display the Array: 
+        document.getElementById("demo").innerHTML=num;
+
+     
+         </script>
+         </body>
+         </html>
