@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1>Data Types</h1>
+        <h2>Data Types</h2>
+<p id="length"></p>
+<p id="weight"></p>
+<p id="color"></p>
+<p id="name"></p>
+<p id="person"></p>
+<p id="cars"></p>
+<p id="date"></p>
+<script>
+    //For numbers:
+let length=16;
+let weight=17.5;
+
+//For Strings:
+
+let color="yellow";
+let name="John";
+
+//For objects:
+let x =true;
+let y=false;
+
+//For Array object:
+
+const person={firstName:"Sam",lastName:"Doe"};
+
+//For Array objects:
+const cars =["Saab", "Volvo", "BMW"];
+
+//For Date objects:
+
+const date =new Date();
+let curr_date=date.getDate();
+let curr_month=date.getMonth();
+let curr_year=date.getFullYear();
+let formattedDate=curr_date+"-"+curr_month+"-"+curr_year;
+
+document.getElementById("length").innerHTML="length is"+length;
+document.getElementById("weight").innerHTML="weight is"+weight;
+document.getElementById("color").innerHTML="string color is "+color;
+document.getElementById("cars").innerHTML="cars are :"+cars;
+document.getElementById("person").innerHTML="person who is : "+person.firstName+" "+person.lastName;
+document.getElementById("date").innerHTML="date is :"+formattedDate;
+</script>
+</body>
+</html>
