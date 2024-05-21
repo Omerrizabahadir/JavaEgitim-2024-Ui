@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <h2>JavaScript typeError For null value</h2>
+        <p id="demo"></p>
+       
+       <script>
+            let obj=null;
+           
+            //Uncaught TypeError: Cannot read properties of null (reading 'property')
+            //Attempting to access a property of a null or undefined value:
+           let value = obj.property;
+       
+            document.getElementById("demo").innerHTML=value;
+
+</script>
+</body>
+</html>
