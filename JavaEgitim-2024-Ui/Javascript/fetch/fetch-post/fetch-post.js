@@ -5,8 +5,10 @@
 const postForm=document.getElementById('post-form');
 
 postForm.addEventListener('submit', function(event){
+
    
-event.preventDefault();  //varsayılanı engelle event geldiğinde alert vermesi için
+   
+event.preventDefault();  //HTML sayfasında incele deyip console kısmında bir önceki istekleri göstermesi için kullandık.varsayılanı engelle event geldiğinde alert vermesi için
 
 debugger;
     const title = document.getElementById('title').value;
@@ -36,7 +38,7 @@ debugger;
 
         //Formu temizle
 
-        postForm.requestFullscreen();
+        postForm.reset();
 
 
     })
