@@ -8,6 +8,7 @@ postForm.addEventListener('submit', function(event){
    
 event.preventDefault();  //varsayılanı engelle event geldiğinde alert vermesi için
 
+debugger;
     const title = document.getElementById('title').value;
     console.log(title)
 
