@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do App</title>
+   
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .card {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .navbar {
+            margin-bottom: 20px;
+        }
+        .table th, .table td {
+            vertical-align: middle;
+            text-align:center;
+            margin: auto;
+            
+
+        }
+        .vh-100 {
+            min-height: 100vh;
+        }
+        .form-check-input {
+            cursor: pointer;
+            text-align: center;
+            margin:auto;
+        }
+       
+    </style>
+</head>
+<body>
+    <div class="container mt-4">
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                List ToDo Page
+            </button>
+            <button onclick="goBack()" class="btn btn-secondary">Back</button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="create-todo.html">Create Post</a>
+                <a class="dropdown-item" href="list-todo.html">List Posts</a>
+            </div>
+        </div>
+    </div>
+<section class="vh-100 d-flex justify-content-center align-items-center">
+    <div class="container py-5 h-100">
+        <div class="row justify-content-center">
+            <div class="col-lg-9 col-xl-7">
+                <div class="card rounded-3">
+                    <div class="card-body p-4">
+                        <h4 class="text-center my-3 pb-3"><b>TODO APP</b></h4>
+                        <table class="table table-bordered mb-4">
+                            <thead class="thead-light">
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Todo item</th>
+                                    <th scope="col">Completed</th>
+                                    <th>Checkbox</th>
+                                    <th>Detay</th>
+                                </tr>
+                            </thead>
+                            <tbody id="todo-table">
+                                <!-- Dinamik olarak doldurulacak -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- JavaScript dosyasını çağırın -->
+<script src="./list-todo.js"></script>
+
+
+</body>
+</html>
