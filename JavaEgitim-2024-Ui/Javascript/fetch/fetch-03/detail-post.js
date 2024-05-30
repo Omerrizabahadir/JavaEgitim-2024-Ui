@@ -16,10 +16,7 @@ fetch(apiUrl, {
     .then((data) => {
         showPostDetails(data);
     })
-    .catch((error) => {
-        console.error('Veri alınırken bir hata oluştu: ', error);
-    });
-
+     c
 
 function showPostDetails(data) {
     const postDetails = document.getElementById('post-details');
