@@ -1,0 +1,113 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Employee App</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Employee App</a>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="employees.html">Employees</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h1>Employee List</h1>
+        <form id="employee-form">
+            <div class="form-group">
+                <label for="employee-username">Username</label>
+                <input type="text" class="form-control" id="employee-username" placeholder="Enter username">
+            </div>
+            <div class="form-group">
+                <label for="employee-age">Age</label>
+                <input type="number" class="form-control" id="employee-age" placeholder="Enter age">
+            </div>
+            <div class="form-group">
+                <label for="employee-salary">Salary</label>
+                <input type="text" class="form-control" id="employee-salary" placeholder="Enter salary" step="any">
+            </div>
+            <button type="submit" class="btn btn-primary">Add Employee</button>
+        </form>
+        <table class="table table-striped mt-4">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Username</th>
+                    <th>Age</th>
+                    <th>Salary</th>
+                    <th>Actions of employee</th>
+                </tr>
+            </thead>
+            <tbody id="employee-list">
+                <!-- Employee rows will be appended here by JavaScript -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Update Employee Modal -->
+    <div class="modal fade" id="updateEmployeeModal" tabindex="-1" role="dialog" aria-labelledby="updateEmployeeModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="updateEmployeeModalLabel">Update Employee</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="update-employee-form">
+                        <div class="form-group">
+                            <label for="update-employee-username">Username</label>
+                            <input type="text" class="form-control" id="update-employee-username" placeholder="Enter new username">
+                        </div>
+                        <div class="form-group">
+                            <label for="update-employee-age">Age</label>
+                            <input type="number" class="form-control" id="update-employee-age" placeholder="Enter new age">
+                        </div>
+                        <div class="form-group">
+                            <label for="update-employee-salary">Salary</label>
+                            <input type="text" class="form-control" id="update-employee-salary" placeholder="Enter new salary">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Update Employee</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Delete Employee Modal -->
+    <div class="modal fade" id="deleteEmployeeModal" tabindex="-1" role="dialog" aria-labelledby="deleteEmployeeModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deleteEmployeeModalLabel">Delete Employee</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Are you sure you want to delete this employee?</p>
+                    <button type="button" class="btn btn-danger" id="confirm-delete-button">Delete</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="./employees.js"></script>
+</body>
+</html>
